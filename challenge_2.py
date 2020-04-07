@@ -8,10 +8,11 @@ total_fuel = 0
 extra_fuel = 0
 for mass in f:
     fuel = calculate_fuel(int(mass))
+    total_fuel += fuel
     while fuel > 0:
         fuel = calculate_fuel(fuel)
         total_fuel += fuel
-    total_fuel += fuel
+
 
 f.close()
 print("total fuel:", total_fuel)
