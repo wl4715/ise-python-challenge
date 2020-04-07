@@ -4,6 +4,7 @@ def calculate_fuel(mass):
 
 f = open("module_masses.txt", "r")
 total_fuel = 0
+extra_fuel = 0
 for mass in f:
     fuel = calculate_fuel(int(mass))
     total_fuel += fuel
