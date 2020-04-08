@@ -11,7 +11,8 @@ for mass in f:
 
     while fuel > 0:
         fuel = calculate_fuel(fuel)
-        total_fuel += fuel
+        if fuel > 0:
+            total_fuel += fuel
 
 f.close()
 print("total fuel:", total_fuel)
