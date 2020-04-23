@@ -1,15 +1,16 @@
 import csv
 
 def compute_row_checksum(row):
-    biggest_number = 0 # set a random low number
-    lowest_number = 1000000 # set a random very high number
+    biggest_number = int(row[0])
+    lowest_number = int(row[0])
     for value in row:
         unit = int(value)
-        if  unit > biggest_number:
+        if unit > biggest_number:
             biggest_number = unit
-        elif unit < lowest_number:
+        if unit < lowest_number:
             lowest_number = unit
-        row_checksum = biggest_number - lowest_number
+
+    row_checksum = biggest_number - lowest_number
     return row_checksum
 
 if __name__ == "__main__":
@@ -20,7 +21,7 @@ if __name__ == "__main__":
     i = 0
     for row in csv_reader:
         row_checksum = compute_row_checksum(row)
-        print(f'The checksum for row {i}: {row_checksum}')
+        print(f'The checksum for row {i}: {row_checksum} \n')
         total_checksum += row_checksum
         i += 1
 
