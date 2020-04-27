@@ -6,18 +6,18 @@ def compute_row_checksum(row):
     for value in row:
         if int(value) > biggest_number:
             biggest_number = int(value)
-        if int(value) < lowest_number:
+        elif int(value) < lowest_number:
             lowest_number = int(value)
-
     row_checksum = biggest_number - lowest_number
+
     return row_checksum
 
 def compute_row_evendivision(row):
     i = 0
     while i < len(row): # for every single number of the row
         j = 0
-        while j < len(row): # iterate through all the number of the row and check
-                            # ensure it's evenly divisible and it's not dividing itself
+        while j < len(row): # iterate through all the numbers of the row and check
+                            # ensure it's evenly divisible and it's not dividing itself                            
             if int(row[i]) % int(row[j]) == 0 and int(row[i]) != int(row[j]):
                 row_evendivision = int(row[i])/int(row[j])
                 break
